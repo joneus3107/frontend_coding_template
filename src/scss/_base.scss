@@ -1,0 +1,53 @@
+@use "variables" as *;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: $font-base;
+  color: $color-text;
+  background: $color-bg;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: $container-width;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+.site-header {
+  border-bottom: 1px solid #eee;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 1rem;
+  }
+
+  nav a {
+    margin-left: 1.5rem;
+    text-decoration: none;
+    color: $color-text;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
+
+.hero {
+  padding-block: 4rem;
+  text-align: center;
+}
+
+.site-footer {
+  border-top: 1px solid #eee;
+  padding-block: 1.5rem;
+  margin-top: 3rem;
+  color: #777;
+  font-size: 0.875rem;
+}

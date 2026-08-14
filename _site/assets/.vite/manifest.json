@@ -1,0 +1,17 @@
+{
+  "js/main.js": {
+    "file": "assets/main-CTYop-49.js",
+    "name": "main",
+    "src": "js/main.js",
+    "isEntry": true
+  },
+  "scss/main.scss": {
+    "file": "assets/style-yI_KCZcm.css",
+    "name": "style",
+    "names": [
+      "style.css"
+    ],
+    "src": "scss/main.scss",
+    "isEntry": true
+  }
+}

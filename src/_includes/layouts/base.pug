@@ -1,0 +1,16 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title= title
+    link(rel="stylesheet" href=asset('scss/main.scss'))
+  body
+    include /partials/header.pug
+
+    main
+      block content
+
+    include /partials/footer.pug
+
+    script(type="module" src=asset('js/main.js'))
