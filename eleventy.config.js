@@ -6,6 +6,13 @@ import pugPlugin from '@11ty/eleventy-plugin-pug';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default function (eleventyConfig) {
+	eleventyConfig.addWatchTarget('./_site/assets/.vite/manifest.json');
+
+	eleventyConfig.setServerOptions({
+		headers: {
+			'Cache-Control': 'no-store',
+		},
+	});
 	// Pug was moved out of Eleventy core in v3, so it's added back as a plugin.
 	// `basedir` lets pages use absolute-style paths like `extends /layouts/base.pug`
 	// that resolve from src/_includes, regardless of how deep the page itself is nested.

@@ -1,0 +1,128 @@
+@use 'variables' as *
+@use 'mixins' as *
+
+*
+	margin: 0
+	padding: 0
+	box-sizing: border-box
+
+
+img, picture
+	display: block
+	max-width: 100%
+
+address
+	font-style: normal
+
+a, button
+	color: inherit
+	transition: .3s opacity ease-in-out
+	&:hover
+		text-decoration: none
+		opacity: .6
+		color: inherit
+
+button
+	cursor: pointer
+
+ul, ol
+	list-style: none
+	padding: 0
+	margin: 0
+
+h1, h2, h3, h4, h5, h6
+	font-family: inherit
+
+figure, p
+	margin: 0
+
+p + p 
+	margin-top: 1.5em
+
+input,
+select,
+textarea
+	outline: none
+	vertical-align: middle
+	@include font(16)
+
+input:not([type="checkbox"]):not([type="radio"]):not([type="file"]):not([type="hidden"]):not([type="submit"]):not([type="reset"]):not([type="button"]):not([type="image"]),
+select,
+textarea
+	-webkit-appearance: none
+	-moz-appearance: none
+	appearance: none
+	width: 100%
+	padding: 1em
+	border: 0
+	box-sizing: border-box
+	border-radius: 4px
+	font-family: $font-base
+	@include font(16)
+	font-weight: 300
+	letter-spacing: .1em
+	color: $color-text
+	outline: none
+	transition: color .3s ease-in-out
+
+button
+	-webkit-appearance: none
+	-moz-appearance: none
+	appearance: none
+	border: none
+	outline: none
+	width: 100%
+	@include font(15)
+	line-height: 2
+
+input[type="radio"]
+	appearance: none
+	-webkit-appearance: none
+	width: 27px
+	height: 27px
+	border: 1px solid
+	border-radius: 50%
+	display: inline-flex
+	align-items: center
+	justify-content: center
+	margin-right: 5px
+	&::before
+		content: ""
+		display: inline-block
+		width: 55%
+		aspect-ratio: 1/1
+		border-radius: 50%
+		transform: scale(0)
+		transition: transform 0.15s ease
+	&:checked
+		&::before
+			transform: scale(1)
+
+input[type="checkbox"]
+	appearance: none
+	-webkit-appearance: none
+	width: 22px
+	height: 22px
+	border-radius: 4px
+	border: 1px solid
+	display: inline-flex
+	justify-content: center
+	align-items: center
+	margin-right: 5px
+	&::before
+		content: ""
+		display: block
+		width: 90%
+		aspect-ratio: 1/1
+		// background: url(../images/common/ico_check.svg) no-repeat center / contain
+		transform: scale(0)
+		will-change: transform
+		transition: transform .3s ease-in-out
+	&:checked
+		&::before
+			transform: scale(1)
+
+textarea
+	box-sizing: border-box
+	min-height: 280px
+	padding-block: 1.5em

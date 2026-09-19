@@ -1,0 +1,24 @@
+@use 'sass:math'
+@use 'sass:meta'
+
+@function strip-unit($number)
+	@if meta.type-of($number) == 'number' and not math.is-unitless($number)
+		@return math.div($number, $number * 0 + 1)
+
+	@return $number
+
+
+@mixin font($fz: 16, $lh: null)
+	$size: strip-unit($fz)
+	font-size: $size * 1px
+	font-size: math.div($size, 16) * 1rem
+	@if $lh != null
+		line-height: $lh
+
+@mixin mqu($breakpoint: 960)
+	@media only screen and (min-width: strip-unit($breakpoint) * 1px)
+		@content
+
+@mixin mqd($breakpoint: 960)
+	@media only screen and (max-width: strip-unit($breakpoint) * 1px - .02px)
+		@content
