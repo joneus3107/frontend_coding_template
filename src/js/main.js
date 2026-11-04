@@ -1,2 +1,3 @@
-// Entry point — import more modules from here as the project grows
-console.log("Template loaded ✅");
+document.addEventListener('DOMContentLoaded', () => {
+	console.log('javascript ready');
+});

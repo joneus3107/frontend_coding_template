@@ -1,1 +1,1 @@
-console.log(`Template loaded ✅`);
+document.addEventListener(`DOMContentLoaded`,()=>{console.log(`javascript ready`)});
